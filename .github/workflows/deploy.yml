@@ -28,7 +28,8 @@ jobs:
       - name: Prepare clean website artifact
         run: |
           mkdir -p _site
-          cp index.html _site/index.html
+          cp ./*.html _site/
+          cp style.css _site/style.css
           if [ -d assets ]; then cp -R assets _site/assets; fi
           if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
           touch _site/.nojekyll
